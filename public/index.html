@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+    <title>CS4241 Assignment A3</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="main.js" defer></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <main class="container mx-auto px-4 py-8">
+        <section 
+            id="authSection" 
+            aria-labelledby="login-heading" 
+            class="bg-white shadow-md rounded-lg p-6 max-w-md mx-auto"
+        >
+            <h2 id="login-heading" class="text-2xl font-bold text-center mb-4">
+                Login to Your Account
+            </h2>
+            <form 
+                id="login-form" 
+                aria-label="Login Form" 
+                class="flex flex-col space-y-4"
+            >
+                <div>
+                    <label 
+                        for="username" 
+                        class="block mb-2 font-semibold"
+                    >
+                        Username
+                    </label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username"
+                        required 
+                        aria-required="true"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md"
+                    >
+                </div>
+
+                <div>
+                    <label 
+                        for="password" 
+                        class="block mb-2 font-semibold"
+                    >
+                        Password
+                    </label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password"
+                        required 
+                        aria-required="true"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md"
+                    >
+                </div>
+
+                <div class="flex space-x-4">
+                    <button 
+                        type="submit" 
+                        class="flex-1 bg-green-600 text-white py-2 rounded-md"
+                    >
+                        Login
+                    </button>
+                    <button 
+                        type="button" 
+                        id="signup-btn" 
+                        class="flex-1 bg-blue-600 text-white py-2 rounded-md"
+                    >
+                        Sign Up
+                    </button>
+                </div>
+
+                <div class="text-center">
+                    <a 
+                        href="/auth/github" 
+                        class="text-blue-600 hover:underline"
+                        aria-label="Login with GitHub"
+                    >
+                        Login with GitHub
+                    </a>
+                </div>
+            </form>
+        </section>
+    </main>
+        <section 
+            id="inputSection" 
+            class="hidden bg-blue-200 p-6 rounded-lg shadow-md mt-8"
+        >
+            <h1 class="text-4xl font-bold text-center mb-6 text-black">Pool Practice Tracker</h1>
+            <form 
+                id="practice-form" 
+                class="bg-white p-6 rounded-lg shadow-md flex flex-col space-y-4 max-w-md mx-auto"
+            >
+                <div class="flex flex-col">
+                    <label for="practice-type" class="mb-2 font-semibold">Practice Type:</label>
+                    <select 
+                        id="practice-type" 
+                        class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">Select a practice type</option>
+                        <option value="Straight">Straight</option>
+                        <option value="Right Spin">Right Spin</option>
+                        <option value="Left Spin">Left Spin</option>
+                        <option value="Backspin">Backspin</option>
+                        <option value="Stun Shot">Stun Shot</option>
+                        <option value="Easy Drill">Easy Drill</option>
+                        <option value="Medium Drill">Medium Drill</option>
+                        <option value="Hard Drill">Hard Drill</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="duration" class="mb-2 font-semibold">Duration (minutes):</label>
+                    <input 
+                        type="number" 
+                        id="duration" 
+                        min="1" 
+                        required 
+                        class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="score" class="mb-2 font-semibold">Self-Score (1-10):</label>
+                    <input 
+                        type="number" 
+                        id="score" 
+                        min="1" 
+                        max="10" 
+                        required 
+                        class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                </div>
+
+                <button 
+                    type="submit" 
+                    class="bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition-colors"
+                >
+                    ADD PRACTICE
+                </button>
+            </form>
+        </section>
+
+        <section 
+            id="outputSection" 
+            class="hidden mt-8 bg-white rounded-lg shadow-md p-6"
+        >
+            <h2 class="text-3xl font-bold text-center mb-6 text-blue-900 bg-yellow-400 p-2 rounded">
+                Practice Records
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-blue-100">
+                            <th class="p-3 border">Practice Type</th>
+                            <th class="p-3 border">Duration (minutes)</th>
+                            <th class="p-3 border">Self-score</th>
+                            <th class="p-3 border">Date</th>
+                            <th class="p-3 border">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="practice-table-body">
+                        <!-- Practice records will be inserted here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
