@@ -6,6 +6,7 @@ const express = require("express"),
     LocalStrategy = require("passport-local").Strategy,
     GitHubStrategy = require("passport-github2").Strategy,
     bodyParser = require("body-parser");
+    path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
