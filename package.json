@@ -2,16 +2,16 @@
   "name": "a3-dloac22",
   "version": "1.0.0",
   "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/vxWRKI0Z)\r Assignment 3 - Persistence: Two-tier Web Application with Database, Express server, and CSS template\r ===",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cs4241-c25/a3-dloac22.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Dat The Loac",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/cs4241-c25/a3-dloac22/issues"
