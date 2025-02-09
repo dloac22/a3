@@ -34,7 +34,7 @@ const User = mongoose.model("User", UserSchema);
 const Practice = mongoose.model("Practice", PracticeSchema);
 
 // Middleware
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 app.use(session({
     secret: "secret",
