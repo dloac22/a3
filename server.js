@@ -50,7 +50,9 @@ app.use(express.json());
 passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/github/callback"
+    callbackURL: process.env.NODE_ENV === 'production'
+    ? 'https://a3-dloac22.vercel.app/auth/github/callback'
+    : 'http://localhost:3000/auth/github/callback'
   },
   async (accessToken, refreshToken, profile, done) => {
     try {
