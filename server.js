@@ -44,6 +44,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(express.json());
 
 // GitHub Strategy
 passport.use(new GitHubStrategy({
@@ -115,15 +116,10 @@ passport.deserializeUser(async (id, done) => {
 
 // Routes
 app.get("/", (req, res) => res.sendFile(__dirname + "/public/index.html"));
-app.post("/login", passport.authenticate("local"), (req, res) => res.send("Logged in"));
-app.get("/logout", (req, res) => {
-    req.logout(function(err) {
-        if (err) return next(err);
-        req.session.destroy(() => {
-            res.send("Logged out");
-        });
-    });
-});
+app.post("/login", (req, res) => res.send("Logged in"));
+app.get("/logout", (req, res) => res.send("Logged out"));
+
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
 
 
 // Signup route
