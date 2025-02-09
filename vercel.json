@@ -4,11 +4,51 @@
 	  {
 		"src": "server.js",
 		"use": "@vercel/node"
+	  },
+	  {
+		"src": "public/**",
+		"use": "@vercel/static"
 	  }
 	],
 	"routes": [
 	  {
-		"src": "/api/(.*)",
+		"src": "/main.js",
+		"dest": "/public/main.js"
+	  },
+	  {
+		"src": "/styles.css",
+		"dest": "/public/styles.css"
+	  },
+	  {
+		"src": "/auth/(.*)",
+		"dest": "/server.js"
+	  },
+	  {
+		"src": "/login",
+		"dest": "/server.js"
+	  },
+	  {
+		"src": "/signup",
+		"dest": "/server.js"
+	  },
+	  {
+		"src": "/add",
+		"dest": "/server.js"
+	  },
+	  {
+		"src": "/data",
+		"dest": "/server.js"
+	  },
+	  {
+		"src": "/update/(.*)",
+		"dest": "/server.js"
+	  },
+	  {
+		"src": "/delete/(.*)",
+		"dest": "/server.js"
+	  },
+	  {
+		"src": "/logout",
 		"dest": "/server.js"
 	  },
 	  {
@@ -16,4 +56,4 @@
 		"dest": "/server.js"
 	  }
 	]
-}
+  }
